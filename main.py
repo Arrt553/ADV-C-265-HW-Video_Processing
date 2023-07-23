@@ -27,7 +27,7 @@ def upload_video():
 
 
 
-    result = cv2.VideoWriter('static/' + 'Earth_rotation_project-265.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 30, size, 0)
+    result = cv2.VideoWriter('static/' + 'black&white.mp4', cv2.VideoWriter_fourcc(*'mp4v'), 30, size, 0)
 
     try:
 
@@ -35,7 +35,7 @@ def upload_video():
                 status, frame_image = source.read()
                 gray = cv2.cvtColor(frame_image, cv2.COLOR_BG2GRAY)
                 result.write(gray)
-                video_file = 'Earth_rotation_project-265.mp4'
+                video_file = 'black&white.mp4'
     except:
         print('Completed reading all the Frames from the Video')
 
@@ -46,7 +46,7 @@ def upload_video():
 # Code for Project 265 download function starts here
     @app.route('/download')
     def download_file():
-        converted_video_path = "static/Earth_rotation_project-265.mp4"
+        converted_video_path = "static/black&white.mp4"
         return send_file(converted_video_path, as_attachment = True)
 
 
